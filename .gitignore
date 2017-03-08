@@ -1,0 +1,4 @@
+preprocess_*
+__pycache__
+cifar-10*
+nohup.out
