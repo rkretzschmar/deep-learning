@@ -1,0 +1,1 @@
+floyd run --mode jupyter --env tensorflow --data R5KrjnANiKVhLWAkpXhNBe --gpu
