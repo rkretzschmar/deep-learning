@@ -75,7 +75,7 @@ def test_get_batches(get_batches):
     with tf.Graph().as_default():
         test_batch_size = 128
         test_seq_length = 5
-        test_int_text = list(range(1000*test_seq_length))
+        test_int_text = list(range(0,1000*test_seq_length))
         batches = get_batches(test_int_text, test_batch_size, test_seq_length)
 
         # Check type
@@ -205,11 +205,14 @@ def test_get_init_cell(get_init_cell):
 def test_get_embed(get_embed):
     with tf.Graph().as_default():
         embed_shape = [50, 5, 256]
+        print("embed_shape: {}".format(embed_shape[:2]))
         test_input_data = tf.placeholder(tf.int32, embed_shape[:2])
         test_vocab_size = 27
         test_embed_dim = embed_shape[2]
 
         embed = get_embed(test_input_data, test_vocab_size, test_embed_dim)
+
+        print("embed {}".format(embed))
 
         # Check shape
         assert embed.shape == embed_shape,\
